@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import { DAppProvider, ChainId } from "@usedapp/core";
+import { Main } from "./components/Main";
+import { Header } from "./components/Header";
+import { Container } from "@mui/material";
 function App() {
+  const { Kovan } = ChainId;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DAppProvider
+      config={{
+        supportedChains: [Kovan, 1337],
+      }}
+    >
+      <Header />
+      <Container maxWidth="md">
+        <p>hi</p>
+        <Main />
+      </Container>
+    </DAppProvider>
   );
 }
 
