@@ -1,0 +1,42 @@
+{
+  "contracts": {
+    "MockDAI": "d4f20f97c14148a58c1bfbe20f734865cceec1a5",
+    "MockV3Aggregator": "9e734e161b5cafcca52a917f10266f5a8bc05b28",
+    "MockWETH": "1e53bfac49bcd2b9d7f538a377d75baa4e65b922",
+    "OpenZeppelin/openzeppelin-contracts@4.2.0/ERC20": "5c27d7156fdbfe889902cc167df697405a50ad20",
+    "SimbaToken": "fd1b01ece2c231b2995759b17b0707ffad23c1ea",
+    "TokenFarm": "d5d3e69bdc4a3dfe7a6639f05b2512fc303f155b"
+  },
+  "tests": {
+    "tests/unit/test_token_farm.py": {
+      "coverage": false,
+      "isolated": false,
+      "results": "....",
+      "sha1": "0cbfea3e4297e88cd9a95fa1fce90ceefedc0705",
+      "txhash": [
+        "8d27e5c06428dfa1882aecc6574457288868d915"
+      ]
+    }
+  },
+  "tx": {
+    "8d27e5c06428dfa1882aecc6574457288868d915": {
+      "TokenFarm": {
+        "0": [
+          [],
+          [],
+          []
+        ],
+        "2": [
+          [],
+          [],
+          []
+        ],
+        "4": [
+          [],
+          [],
+          []
+        ]
+      }
+    }
+  }
+}
