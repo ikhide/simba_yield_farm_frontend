@@ -3,6 +3,10 @@ import { DAppProvider, ChainId } from "@usedapp/core";
 import { Main } from "./components/Main";
 import { Header } from "./components/Header";
 import { Container } from "@mui/material";
+import { ThemeProvider } from "@mui/styles";
+const theme = {
+  spacing: "8px",
+};
 function App() {
   const { Kovan } = ChainId;
   return (
@@ -15,11 +19,13 @@ function App() {
         },
       }}
     >
-      <Header />
-      <Container maxWidth="md">
-        <p>hi</p>
-        <Main />
-      </Container>
+      <ThemeProvider theme={theme}>
+        <Header />
+        <Container maxWidth="md">
+          <p>hi</p>
+          <Main />
+        </Container>
+      </ThemeProvider>
     </DAppProvider>
   );
 }

@@ -3,7 +3,7 @@ import { TabList, TabContext, TabPanel } from "@mui/lab";
 import React, { useState } from "react";
 import { WalletBalance } from "./WalletBalance";
 import { makeStyles } from "@mui/styles";
-import { Theme } from "@mui/material/styles";
+// import { Theme } from "@mui/material/styles";
 import { Token } from "../Main";
 import { StakeForm } from "./StakeForm";
 
@@ -11,12 +11,12 @@ interface YourWalletProps {
   supportedTokens: Array<Token>;
 }
 
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles(() => ({
   tabContent: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    gap: theme.spacing(4),
+    gap: 4,
   },
   box: {
     backgroundColor: "#white",
