@@ -101,7 +101,7 @@ export const StakeForm = ({ token }: StakeFormProps) => {
           {isMining ? <CircularProgress size={26} /> : "Stake!!!"}
         </Button>
       </div>
-      <Snackbar
+      {/* <Snackbar
         open={showErc20ApprovalSuccess}
         autoHideDuration={5000}
         onClose={handleCloseSnack}
@@ -118,7 +118,7 @@ export const StakeForm = ({ token }: StakeFormProps) => {
         <Alert onClose={handleCloseSnack} severity="success">
           Tokens Staked!
         </Alert>
-      </Snackbar>
+      </Snackbar> */}
     </>
   );
 };
