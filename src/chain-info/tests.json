@@ -1,18 +1,19 @@
 {
   "contracts": {
-    "MockDAI": "d4f20f97c14148a58c1bfbe20f734865cceec1a5",
+    "MockDAI": "49db23a9f993b7ec947cf2a2e982ed67d6c3f652",
+    "MockERC20": "a76a17e80ec61ec18ed8fd4f87a9ed109849a985",
     "MockV3Aggregator": "9e734e161b5cafcca52a917f10266f5a8bc05b28",
-    "MockWETH": "1e53bfac49bcd2b9d7f538a377d75baa4e65b922",
+    "MockWETH": "242c6616a152fccdc6fc911467b73f26c257bf35",
     "OpenZeppelin/openzeppelin-contracts@4.2.0/ERC20": "5c27d7156fdbfe889902cc167df697405a50ad20",
     "SimbaToken": "fd1b01ece2c231b2995759b17b0707ffad23c1ea",
-    "TokenFarm": "d5d3e69bdc4a3dfe7a6639f05b2512fc303f155b"
+    "TokenFarm": "4ab75aa98fdc1bd3fad2862feb133980f916c986"
   },
   "tests": {
     "tests/unit/test_token_farm.py": {
       "coverage": false,
       "isolated": false,
-      "results": "....",
-      "sha1": "0cbfea3e4297e88cd9a95fa1fce90ceefedc0705",
+      "results": ".....",
+      "sha1": "e4a20a8043bd7bb851a2f6dd32371d51b9555e81",
       "txhash": [
         "8d27e5c06428dfa1882aecc6574457288868d915"
       ]

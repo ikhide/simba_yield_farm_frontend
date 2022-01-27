@@ -22,7 +22,6 @@ function App() {
       <ThemeProvider theme={theme}>
         <Header />
         <Container maxWidth="md">
-          <p>hi</p>
           <Main />
         </Container>
       </ThemeProvider>

@@ -3,21 +3,35 @@ import { Token } from "../Main";
 import { useEthers, useTokenBalance, useNotifications } from "@usedapp/core";
 import { formatUnits } from "@ethersproject/units";
 import { Button, Input, CircularProgress, Snackbar } from "@mui/material";
-import Alert from "@mui/lab/Alert";
+import { Alert } from "@mui/material";
 import { useStakeTokens } from "../../hooks";
 import { utils } from "ethers";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles(() => ({
+  flex: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: 4,
+  },
+}));
 
 export interface StakeFormProps {
   token: Token;
 }
 
 export const StakeForm = ({ token }: StakeFormProps) => {
-  const { address: tokenAddress, name } = token;
-  const { account } = useEthers();
-  const tokenBalance = useTokenBalance(tokenAddress, account);
-  const formattedTokenBalance: number = tokenBalance
-    ? parseFloat(formatUnits(tokenBalance, 18))
-    : 0;
+  const classes = useStyles();
+  const {
+    address: tokenAddress,
+    // name
+  } = token;
+  // const { account } = useEthers();
+  // const tokenBalance = useTokenBalance(tokenAddress, account);
+  // const formattedTokenBalance: number = tokenBalance
+  //   ? parseFloat(formatUnits(tokenBalance, 18))
+  //   : 0;
   const { notifications } = useNotifications();
 
   const [amount, setAmount] = useState<
@@ -30,17 +44,21 @@ export const StakeForm = ({ token }: StakeFormProps) => {
     console.log(newAmount);
   };
 
+  //Handle Approval start
   const { approveAndStake, state: approveAndStakeErc20State } =
     useStakeTokens(tokenAddress);
   const handleStakeSubmit = () => {
     const amountAsWei = utils.parseEther(amount.toString());
     return approveAndStake(amountAsWei.toString());
   };
-
   const isMining = approveAndStakeErc20State.status === "Mining";
+
+  //Handle Approval end
+
   const [showErc20ApprovalSuccess, setShowErc20ApprovalSuccess] =
     useState(false);
   const [showStakeTokenSuccess, setShowStakeTokenSuccess] = useState(false);
+
   const handleCloseSnack = () => {
     setShowErc20ApprovalSuccess(false);
     setShowStakeTokenSuccess(false);
@@ -71,13 +89,14 @@ export const StakeForm = ({ token }: StakeFormProps) => {
 
   return (
     <>
-      <div>
+      <div className={classes.flex}>
         <Input onChange={handleInputChange} />
         <Button
           onClick={handleStakeSubmit}
           color="primary"
           size="large"
           disabled={isMining}
+          variant="contained"
         >
           {isMining ? <CircularProgress size={26} /> : "Stake!!!"}
         </Button>

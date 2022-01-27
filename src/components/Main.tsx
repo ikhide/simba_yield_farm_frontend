@@ -6,7 +6,7 @@ import networkMapping from "../chain-info/deployments/map.json";
 import { constants } from "ethers";
 import brownieConfig from "../brownie-config.json";
 import { YourWallet } from "./yourWallet";
-import { makeStyles, useTheme } from "@mui/styles";
+import { makeStyles } from "@mui/styles";
 // import { Theme } from "@mui/material/styles";
 import simba from "../simba.png";
 import dai from "../dai.png";
@@ -16,18 +16,12 @@ export type Token = {
   address: string;
   name: string;
 };
-type Theme = {
-  spacing: string;
-};
-
 const useStyles = makeStyles(() => {
-  const theme: Theme = useTheme();
-  console.log(theme);
   return {
     title: {
       color: "white",
       textAlign: "center",
-      padding: theme.spacing,
+      padding: "4px",
     },
   };
 });
@@ -58,7 +52,7 @@ export const Main = () => {
 
   return (
     <div>
-      <h2>Simba Token App</h2>
+      <h2 className={classes.title}>Simba Token App</h2>
       <YourWallet supportedTokens={supportedTokens} />
     </div>
   );

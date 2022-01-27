@@ -19,7 +19,8 @@ const useStyles = makeStyles(() => ({
     gap: 4,
   },
   box: {
-    backgroundColor: "#white",
+    backgroundColor: "white",
+    borderRadius: "25px",
   },
   header: {
     color: "white",
@@ -35,7 +36,7 @@ export const YourWallet = ({ supportedTokens }: YourWalletProps) => {
   };
   return (
     <Box>
-      <h1>Your Wallet!</h1>
+      <h1 className={classes.header}>Your Wallet!</h1>
       <Box className={classes.box}>
         <TabContext value={selectedTokenIndex.toString()}>
           <TabList aria-label="stake form tabs" onChange={handleChange}>
